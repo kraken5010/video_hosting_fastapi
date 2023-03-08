@@ -1,11 +1,11 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
 
 class User(BaseModel):
     id: int
-    name: str
+    user: Optional[str]
 
 
 class UploadVideo(BaseModel):
@@ -15,8 +15,5 @@ class UploadVideo(BaseModel):
 
 class GetVideo(BaseModel):
     user: User
-    video: UploadVideo
-
-
-class Message(BaseModel):
-    message: str
+    title: str
+    description: str
