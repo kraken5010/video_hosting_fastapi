@@ -28,4 +28,4 @@ class Video(Model):
     description: str = ormar.String(max_length=500)
     file: str = ormar.String(max_length=1000)
     create_at: datetime.datetime = ormar.DateTime(default=datetime.datetime.now)
-    user: Optional[User] = ormar.ForeignKey(User)
+    user: Optional[User, int, None] = ormar.ForeignKey(User)
