@@ -13,7 +13,9 @@ async def save_video(
         description: str,
         back_tasks: BackgroundTasks
 ):
-    file_name = f'media/{user.id}_{uuid4()}.mp4'
+    print(user.__dict__.get('id'))
+
+    file_name = f'media/{user}_{uuid4()}.mp4'
     if file.content_type == 'video/mp4':
         back_tasks.add_task(write_video, file_name, file)
     else:

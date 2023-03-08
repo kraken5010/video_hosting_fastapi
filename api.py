@@ -18,7 +18,6 @@ async def create_video(
         file: UploadFile = File(...)
 ):
     user = await User.objects.first()
-    print(user)
     return await save_video(user, file, title, description, back_tasks)
 
 
